@@ -1,5 +1,4 @@
 // Test away!
-// Test away!
 import React from "react";
 import * as rtl from "react-testing-library";
 import "@testing-library/jest-dom/extend-expect";
