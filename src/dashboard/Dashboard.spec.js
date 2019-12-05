@@ -4,6 +4,8 @@ import "@testing-library/jest-dom/extend-expect";
 
 import Dashboard from "./Dashboard";
 
+afterEach(rtl.cleanup);
+
 test("Dashboard renders", () => {
   const container = rtl.render(<Dashboard />);
   expect(container).toBeDefined();

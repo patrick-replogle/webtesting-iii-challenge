@@ -7,9 +7,19 @@ import Controls from "./Controls";
 
 afterEach(rtl.cleanup);
 
-test("Controls render", async () => {
+//test if control component renders
+test("Controls component renders", () => {
   const wrapper = rtl.render(<Controls />);
   expect(wrapper).toBeDefined();
-  expect(wrapper).not.toBeUndefined();
-  expect(wrapper).not.toBeFalsy();
+});
+
+//test if buttons are present
+test("Buttons are provided to toggle closed and locked states", () => {
+  const { getByText } = rtl.render(<Controls />);
+
+  const closeGate = getByText(/close gate/i);
+  const lockGate = getByText(/lock gate/i);
+
+  expect(closeGate).toBeDefined();
+  expect(lockGate).toBeDefined();
 });
